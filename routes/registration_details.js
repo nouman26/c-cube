@@ -32,6 +32,13 @@ router.post('/',function(req,res){
     res.render("registration details")
 })
 
+router.post('/all_candidates',function(req,res){
+    var filter_prog=prog_model.find({});
+    filter_prog.exec(function(err,data){
+        res.render("program_wise_student_list",{read:data})
+    })
+});
+
 router.post('/quiz',function(req,res){
     var filter_prog=prog_model.find({quiz:"Quiz"});
     filter_prog.exec(function(err,data){
