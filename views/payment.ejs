@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.png" type="image/gif" sizes="16x16">
+
+    <title>C-Cube</title>
+      
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="/stylesheets/style_Logo.css">
+    <link rel="stylesheet" href="/stylesheets/style_PaymentProg.css">
+
+    <!-- Bootstrap library -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    
+    <!-- Load an icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <img src="/images/logo_image.png" alt="C-CUBE Logo">
+  <div id="circle1">
+    <div id="inner-cirlce1">
+    </div>
+  </div>
+  <div class="cube">
+    <h2>C-CUBE</h2>
+    <p>Computing-competitions-Creativity</p>
+  </div>
+   
+  <div class="container">
+    <!-- Verification Entry Jumbotron -->
+        <div class="jumbotron text-center">
+            <h3>Please transfer Rs.<%=fees%> to the given account number</h3>
+            <h3>After the transaction, please upload the image of the receipt/massage that you are received after the transaction</h3>
+            <table>
+                <thead>
+                    <th>Account Type</th>
+                    <th>Account Name</th>
+                    <th>Account Number</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img class="account_type_logo" src="/images/jazz_cash.svg"></td>
+                        <td>Muhammad Nouman</td>
+                        <td>03052375418</td>
+                    </tr>
+                    <tr>
+                      <td><img class="account_type_logo" src="/images/easypaisa.png"></td>
+                      <td>Muhammad Nouman</td>
+                      <td>03416332152</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+
+    <div id="form_fade-box">
+          <form class="form" action="/thanks" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="name" value="<%=name%>">
+            <input type="hidden" name="roll_no" value="<%=roll_no%>">
+            <input type="hidden" name="cnic" value="<%=cnic%>">
+            <input type="hidden" name="fees" value="<%=fees%>">
+            <div class="row ac_type">
+              <div class="col-sm-6">
+                <input type="radio" name="ac_type" value="jazz-cash" placeholder=""  required/>
+                <img class="form_ac_type_logo" style="width: 105px;" src="/images/jazz_cash.svg">
+              </div>
+              <div class="col-sm-6">
+                <input type="radio" name="ac_type" value="easypaisa" placeholder="" required/>
+                <img class="form_ac_type_logo" style="width: 210px;" src="/images/easypaisa.png">
+              </div>
+            </div>
+            <div class="row">
+              <input type="hidden" name="date" id="date" value=""/>
+              <div class="col-sm-4">
+                <label for="tid">Account Number</label>
+                <input class="input-styling input" type="text" name="ac_number" placeholder=""  required/>
+              </div>
+              <div class="col-sm-4">
+                <label for="tid">Trx ID</label>
+                <input class="input-styling input" type="text" name="tid" placeholder=""  required/>
+              </div>
+              <div class="col-sm-4">
+                <label for="receipt">Upload Receipt</label>
+                <input class="input-styling" type="file" name="receipt" placeholder="" required/>
+              </div>
+            </div>
+            <button type="submit" class="submit">Next</button>
+          </form>
+    </div>  
+
+    <!-- Instructions -->
+      <div class="alert alert-success" role="alert" id="notes">
+        <h4>NOTES</h4>
+        <ul>
+          <li>If you not pay fees and provide wrong TID Number or Image Your form will be rejected and you will recieve mail with in 24 hours.</li>
+          <li>If you provide correct TID or Image Your form will be accepted and you will recieve mail with in 24 hours.</li>
+          <li>If somehow, you did not recieve mail then contact us.</li>
+          <li>If you have any problem regarding form then contact us.</li>
+        </ul>
+      </div>
+    </div>
+
+<footer>
+  <div class="container">
+    <div class="row footer">
+      <div class="col-sm-6">
+        <h3>FOLLOW US</h3>
+          <div class="footer-icons1">
+              <a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+          </div>
+      </div>
+      <div class="col-sm-6">
+        <h3>CONTACT US</h3>
+        <div class="footer-icons2">
+            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i> <p>noumanarain0@gmail.com</p><br>
+            <i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i> <p>03133493416</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+<script>
+  var curday = function(sp){
+  today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //As January is 0.
+  var yyyy = today.getFullYear();
+
+  if(dd<10) dd='0'+dd;
+  if(mm<10) mm='0'+mm;
+  return (dd+sp+mm+sp+yyyy);
+  };
+  document.getElementById("date").value=curday('/')
+</script>
+</html>

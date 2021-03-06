@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.png" type="image/gif" sizes="16x16">
+
+    <title>C-Cube</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/stylesheets/registration_request.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    
+     <!-- jQuery library -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Load an icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  
+</head>
+<body>
+  <nav>
+    <img class="login__ccube" src="/images/logo_image.png" alt="">
+  </nav>
+  <div class="cube">
+    <h2>C-CUBE</h2>
+    <p>Computing-Competitions-Creativity</p>
+  </div>
+
+  <div class="container">
+    <h2 class="page-header">Student Details</h2>
+
+    <!-- Table hover + Table hover cell -->
+    <table class="table">
+      <tr>
+        <td>Name</td>
+        <td><%=info.name%></td>
+      </tr>
+      <tr>
+        <td>Roll No</td>
+        <td><%=info.roll_no%></td>
+      </tr>
+      <tr>
+        <td>CNIC</td>
+        <td><%=info.cnic%></td>
+      </tr>
+      <tr>
+        <td>Department</td>
+        <td><%=info.department%></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><%=info.email%></td>
+      </tr>
+      <tr>
+        <td>Phone No</td>
+        <td><%=info.phone_no%></td>
+      </tr>
+      <tr>
+        <td>Registration Date</td>
+        <td><%=pay.date%></td>
+      </tr>
+    </table>
+
+    <div style="margin-top: 30px; margin-bottom: 30px; box-shadow: 0 0 15px gray; padding: 25px">
+      <h3>Programs Details</h3>
+      <ol>
+        <% if (prog.quiz!== null && prog.quiz!==undefined) { %>
+          <li><%=prog.quiz%></li>
+        <%}%>
+        <% if (prog.TP!== null && prog.TP!==undefined) { %>
+          <li><%=prog.TP%></li>
+        <%}%>
+        <% if (prog.wd!== null && prog.wd!==undefined) { %>
+          <li><%=prog.wd%></li>
+        <%}%>
+        <% if (prog.gd!== null && prog.gd!==undefined) { %>
+          <li><%=prog.gd%></li>
+        <%}%>
+        <% if (prog.sp!== null && prog.sp!==undefined) { %>
+          <li><%=prog.sp%></li>
+        <%}%>
+        <% if (prog.TK!== null && prog.TK!==undefined) { %>
+          <li><%=prog.TK%></li>
+        <%}%>
+      </ol>
+    </div>
+
+
+  <div style="margin-top: 30px; margin-bottom: 30px; box-shadow: 0 0 15px gray; padding: 25px">
+    <h3>Payment Details</h3>
+    <div class="row">
+      <div class="col-sm-5">
+        <img class="center" src="/reciepts/<%=pay.image%>" alt="">
+      </div>
+      <div class="col-sm-6">
+        <table class="table">
+          <tr>
+            <td>Account Type </td>
+            <td><%=pay.ac_type%></td>
+          </tr>
+          <tr>
+            <td>Account No</td>
+            <td><%=pay.ac_number%></td>
+          </tr>
+          <tr>
+            <td>TID</td>
+            <td><%=pay.tid%></td>
+          </tr>
+          <tr>
+            <td>Fees</td>
+            <td><%=pay.fees%></td>
+          </tr>
+        </table>
+      </div> 
+    </div>
+  </div>
+</div>
+</body>
+</html>

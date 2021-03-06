@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.png" type="image/gif" sizes="16x16">
+    
+    <title>C-Cube</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/stylesheets/registration_request.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Load an icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  
+</head>
+<body>
+  <nav>
+    <img class="login__ccube" src="/images/logo_image.png" alt="">
+  </nav>
+  <div class="cube">
+    <h2>C-CUBE</h2>
+    <p>Computing-Competitions-Creativity</p>
+  </div>
+  
+  <div class="container">
+    <h2 class="page-header">Registration Requests</h2>
+    <!-- Table hover + Table hover cell -->
+    <table class="table table-bordered table-hover table-hover-cells">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Roll No</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tbody>
+          <%var i=0%>
+          <%read.forEach(function(row){ %>
+          <%i++%>
+        <tr>
+          <th scope="row"><%=i%></th>
+          <td><%=row.name%></td>
+          <td><%=row.roll_no%></td>
+          <td>
+            <form method="POST" action="/admin/viewdetails">
+              <button class="btn" type="submit" name="cnic" value="<%=row.cnic%>">View</button>
+            </form>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

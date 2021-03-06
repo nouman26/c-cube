@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.png" type="image/gif" sizes="16x16">
+
+    <title>C-Cube</title>
+
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/stylesheets/style_Logo.css">
+    <link rel="stylesheet" href="/stylesheets/style_RegisterationForm.css">
+
+    <!-- Load an icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
+  </head>
+<body>
+  <img src="/images/logo_image.png" alt="C-CUBE Logo">
+  <div id="circle1">
+    <div id="inner-cirlce1">
+    </div>
+  </div>
+  <div class="cube">
+    <h2>C-CUBE</h2>
+    <p>Computing-Competitions-Creativity</p>
+  </div>
+  <div id="logo"> 
+    <h1><i> Registration Form</i></h1>
+  </div>
+  <div id="fade-box">
+    <section class="stark-login container">
+        <form class="form-signin" action="/" method="post" name="form">
+            <label for="username">Full Name</label>
+            <input class="form-styling" type="text" name="username" placeholder=""  required/>
+            <label for="roll_no">Roll No</label>
+            <input class="form-styling" type="text" name="roll_no" placeholder="" required/>
+            <label for="reference">CNIC No</label>
+            <input class="form-styling" type="text" name="cnic" data-inputmask="'mask': '99999-9999999-9'" placeholder="" required onkeypress='validate(event)' />
+            <label for="department">Department</label>
+            <input class="form-styling" type="text" name="department" placeholder=""  required/>
+            <label for="email">Email</label>
+            <input class="form-styling" type="text" name="email" placeholder="" required/>
+            <label for="phone_no">Phone No</label>
+            <input class="form-styling" type="text" name="phone_no" placeholder=""  data-inputmask="'mask': '9999-9999999'" required onkeypress='validate(event)'/>
+            <button type="submit" class="submit">Next</button>
+        </form>
+    </section>
+  </div>
+  
+  <script>
+    var inputtext=document.getElementsByClassName("form-styling");
+    function inputcolorchange(){
+      for (var i=0;i<6;i++){
+        var inputtext2=inputtext[i].value.trim();
+        if(inputtext2!==null && inputtext2!==undefined && inputtext2!== ""){
+          inputtext[i].style.background="white"
+          inputtext[i].style.color="black"
+        }
+        else{
+          inputtext[i].style.removeProperty("background");
+        }
+        delete n;
+    }
+  }
+    for (var i=0;i<6;i++){
+      var input=document.getElementsByClassName("form-styling")[i];
+      input.addEventListener("mouseout", inputcolorchange);
+      delete input;
+    }
+    // for CNIC
+    $(":input").inputmask();
+   
+     function validate(evt) {
+     var theEvent = evt || window.event;
+   
+     // Handle paste
+     if (theEvent.type === 'paste') {
+         key = event.clipboardData.getData('text/plain');
+     } else {
+     // Handle key press
+         var key = theEvent.keyCode || theEvent.which;
+         key = String.fromCharCode(key);
+     }
+     var regex = /[0-9]|\./;
+     if( !regex.test(key) ) {
+       theEvent.returnValue = false;
+       if(theEvent.preventDefault) theEvent.preventDefault();
+     }
+   }
+  </script>                
+                  
+</body>
+</html>

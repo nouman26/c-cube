@@ -1,0 +1,190 @@
+html {
+  background-size: cover;
+  position: unset !important;
+  overflow-x: hidden;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+}
+/* =========================================
+Spinner
+========================================= */
+img{
+    margin-top: 83px;
+    width:220px; 
+  }
+  .cube h2{
+    font-size: 45px;
+    color: #53beec;
+    margin-top: 60px;
+  }
+  .cube p{
+    color: #996e39;
+    margin-top: -30px;
+    font-size: 15px;
+  }
+  .cube{
+    animation: logo-entry 2s ease-in;
+  }
+
+#circle1 {
+    animation: circle1 4s linear infinite, circle-entry 1s ease-in-out;
+    background: #101b31;
+    border-radius: 50%;
+    border: 10px solid #185188;
+    box-shadow: 0 0 0 2px #101b31, 0 0 0 6px #996e39;
+    height: 350px;
+    width: 350px;
+    top: 58px;
+    left: 50%;
+    margin-left:-175px;
+    position: absolute;
+    overflow: hidden;
+    /* opacity: 0.4; */
+    z-index: -3;
+  }
+  
+  #inner-cirlce1 {
+    /* background: #000; */
+    border-radius: 50%;
+    border: 15px solid #996e39;
+    height: 310px;
+    width: 310px;
+    margin: 10px;
+  }
+  #inner-cirlce1:before {
+    content: " ";
+    height: 480px;
+    background:#101b31;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #inner-cirlce1:after {
+    content: " ";
+    width: 480px;
+    height: 240px;
+    background: #101b31;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+/* =========================================
+Responsive
+========================================= */
+
+@media screen and (max-width: 600px) {
+    img{
+      margin-top: 85px;
+      width:160px;
+    }
+  
+    #circle1{
+      height: 280px;
+      width: 280px;
+      top: 60px;
+      left: 50%;
+      margin-left:-140px;
+    }
+  
+    #inner-cirlce1 {
+      height: 240px;
+      width: 240px;
+      border: 12px solid #996e39;
+    }
+  
+    #inner-cirlce1:after {
+      height: 180px;
+    }
+}
+  @media screen and (max-width: 400px) {
+    img{
+      margin-top: 80px;
+      width:110px;
+    }
+    
+    #circle1{
+      height: 220px;
+      width: 220px;
+      top: 55px;
+      left: 50%;
+      margin-left:-112px;
+    }
+  
+    #inner-cirlce1 {
+      height: 180px;
+      width: 180px;
+    }
+  
+    #inner-cirlce1:after {
+      height: 140px;
+    }
+  
+}
+
+/* =========================================
+Animation Keyframes
+========================================= */
+@keyframes circle-entry {
+    0% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes circle1 {
+    0% {
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+footer{
+  background: linear-gradient(#185188, #996e39) !important;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.footer h3{
+  color:white !important;
+  text-decoration: underline;
+}
+
+.footer-icons1 a{
+color: white;
+padding: 10px;
+text-decoration: none;
+}
+
+.footer-icons1 a{
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  }
+
+.footer-icons2 p,.footer-icons2 i{
+  color: white !important;
+  display: inline !important;
+}
+.footer-icons2 p{
+  font-size: 15px !important;
+}
+.fa{
+  padding: 10px;
+}
+
+.footer-icons1 a:hover,.footer-icons2 a:hover{
+  color: #996e39;
+}

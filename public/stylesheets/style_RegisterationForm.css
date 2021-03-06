@@ -1,0 +1,330 @@
+@import "https://fonts.googleapis.com/css?family=Ubuntu:400,700italic";
+@import "https://fonts.googleapis.com/css?family=Cabin:400";
+* {
+  box-sizing: border-box;
+}
+html, body * { box-sizing: border-box; font-family: 'Open Sans', sans-serif; }
+html {
+  background-color: #101b31;
+  background-size: cover;
+  font-size: 10px;
+}
+body{
+  margin: 0px;
+}
+
+/* =========================================
+Stark Industries Logo
+========================================= */
+#logo {
+  animation: logo-entry 3s ease-in;
+  width: 450px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 40;
+}
+
+h1 {
+  animation: text-glow 2s ease-out infinite alternate;
+  font-family: "Ubuntu", sans-serif;
+  color: #996e39;
+  font-size: 48px;
+  font-size: 4.8rem;
+  font-weight: bold;
+  position: absolute;
+  text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000;
+  top: 18px;
+}
+h1:before {
+  animation: before-glow 2s ease-out infinite alternate;
+  border-left: 535px solid transparent;
+  border-bottom: 10px solid #996e39;
+  content: " ";
+  height: 0;
+  position: absolute;
+  right: -74px;
+  top: -10px;
+  width: 0;
+}
+h1:after {
+  animation: after-glow 2s ease-out infinite alternate;
+  border-left: 100px solid transparent;
+  border-top: 16px solid #996e39;
+  content: " ";
+  height: 0;
+  position: absolute;
+  right: -85px;
+  top: 24px;
+  transform: rotate(-47deg);
+  width: 0;
+}
+
+/* =========================================
+Log in form
+========================================= */
+.form-signin {
+  width: 430px;
+	font-size: 16px;
+	font-weight: 300;
+  padding-left: 37px;
+  padding-right: 37px;
+  padding-top: 55px;
+  padding-bottom: 55px;
+  margin-bottom: 55px !important;
+  transition: opacity .5s ease, transform .5s ease;
+}
+
+.form-signin-left {
+  transform: translateX(-400px);
+  opacity: .0;
+}
+
+
+.form-signin input {
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.form-styling {
+  width: 100%;
+  height: 35px;
+	padding-left: 15px;
+	border: none;
+	border-radius: 20px;
+  margin-bottom: 20px;
+  background: rgba(255,255,255,.2);
+}
+
+label {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  color: rgba(255,255,255,.7);
+  display: block;
+  text-align: left !important;
+}
+
+:focus {outline: none;
+}
+
+#fade-box {
+  animation: input-entry 2s ease-in;
+  z-index: 4;
+}
+
+.stark-login form {
+  animation: form-entry 3s ease-in-out;
+  background: #111;
+  background: linear-gradient(#185188, #996e39);
+  border: 6px solid #996e39;
+  box-shadow: 0 0 15px #185188;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 125px auto 0;
+  position: relative;
+  z-index: 4;
+  width: 500px;
+  transition: 1s all;
+}
+.stark-login form:hover {
+  border: 6px solid white;
+  box-shadow: 0 0 25px white;
+  transition: 1s all;
+}
+
+.stark-login input:focus {
+  animation: box-glow 1s ease-out infinite alternate;
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 255, 253, 0.2), inset 0 0 5px rgba(0, 255, 253, 0.1), 0 2px 0 #000;
+  color: black;
+  outline: none;
+}
+.submit{
+  display: block;
+  width: 100%;
+  margin: auto;
+  padding: 10px 10%;
+  background-color: rgba(16,89,255, 1);;
+  color: white;
+  border: none;
+  border-radius: 20px;
+}
+
+.submit:hover {
+    cursor: pointer; 
+    background-color: #0F4FE6;
+    transition: background-color .5s; 
+}
+
+/* =========================================
+Responsive
+========================================= */
+@media screen and (max-width: 600px) {
+  html{
+    font-size: 7px;
+  }
+  #logo {
+    width: 300px;
+  }
+
+  h1:before {
+    border-left: 400px solid transparent;
+    border-bottom: 10px solid #996e39;
+    right: -52px;
+  }
+  h1:after {
+    border-left: 100px solid transparent;
+    border-top: 16px solid #996e39;
+    right: -62px;
+  }
+
+  label{
+    padding-left: 20px;
+  }
+  .form-signin ,.stark-login form {
+    width: 350px;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+  .form-signin {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+}
+
+@media screen and (max-width: 400px) {
+  html{
+    font-size: 5px;
+  }
+
+  #logo {
+    width: 300px;
+  }
+
+  h1{
+    margin-left: 50px;
+  }
+  h1:before {
+    border-left: 360px solid transparent;
+    border-bottom: 10px solid #996e39;
+    right: -53px;
+  }
+  h1:after {
+    border-left: 80px solid transparent;
+    border-top: 16px solid #996e39;
+    right: -60px;
+    top: 17px;
+  }
+  .form-signin, .stark-login form {
+    width: 340px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .form-signin ,.stark-login form {
+    width: 300px}
+}
+
+@media screen and (max-width: 280px) {
+  .form-signin ,.stark-login form {
+    width: 250px}
+  h1{
+    margin-left: 25px;
+  }
+  h1:before{
+    right: -36px;
+  }
+  h1:after{
+    right: -50px;
+    transform: rotate(-60deg);
+    top: 21px;
+  }
+}
+
+
+/* =========================================
+Animation Keyframes
+========================================= */
+@keyframes logo-entry {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes input-entry {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes form-entry {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    padding: 0;
+  }
+  20% {
+    height: 0;
+    border: 1px solid #00a4a2;
+    width: 0;
+    opacity: 0;
+    padding: 0;
+  }
+  40% {
+    width: 0;
+    border: 6px solid #00a4a2;
+    opacity: 1;
+    padding: 0;
+  }
+  100% {
+  }
+}
+@keyframes box-glow {
+  0% {
+    border-color: #00b8b6;
+    box-shadow: 0 0 5px rgba(0, 255, 253, 0.2), inset 0 0 5px rgba(0, 255, 253, 0.1), 0 2px 0 #000;
+  }
+  100% {
+    border-color: #00fffc;
+    box-shadow: 0 0 20px rgba(0, 255, 253, 0.6), inset 0 0 10px rgba(0, 255, 253, 0.4), 0 2px 0 #000;
+  }
+}
+@keyframes text-glow {
+  0% {
+    color: #996e39;
+    text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000;
+  }
+  100% {
+    color: #ba823d;
+    text-shadow: 0 0 20px #e69745, 0 0 10px #e69745, 0 2px 0 #000;
+  }
+}
+@keyframes before-glow {
+  0% {
+    border-bottom: 10px solid #996e39;
+  }
+  100% {
+    border-bottom: 10px solid #ba823d;
+  }
+}
+@keyframes after-glow {
+  0% {
+    border-top: 16px solid #996e39;
+  }
+  100% {
+    border-top: 16px solid #ba823d;
+  }
+}

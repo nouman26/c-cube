@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.png" type="image/gif" sizes="16x16">
+
+    <title>C-Cube</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="/stylesheets/style_Logo.css">
+    <link rel="stylesheet" href="/stylesheets/style_SelectProgram.css">
+
+    <!-- Bootstrap library -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Load an icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500&display=swap" rel="stylesheet">
+  </head>
+<body onload="clearchecked()">
+  <img src="/images/logo_image.png" alt="C-CUBE Logo">
+  <div id="circle1">
+    <div id="inner-cirlce1">
+    </div>
+  </div>
+  <div class="cube">
+    <h2>C-CUBE</h2>
+    <p>Computing-competitions-Creativity</p>
+  </div>
+        
+  <div class="new container">
+    <div class="slpro">
+      <h3>SELECT PROGRAM</h3>
+    </div>
+    <form method="POST" action="/payment">
+      <input type="hidden" name="name" value="<%=name%>">
+      <input type="hidden" name="roll_no" value="<%=roll_no%>">
+      <input type="hidden" name="cnic" value="<%=cnic%>">
+      <div class="form-group row">
+        <div class="col-xs-9">
+          <input type="checkbox" name="quiz" value="Quiz" id="quiz" class="prog">
+          <label for="quiz">Quiz</label>
+        </div>
+        <div class="col-xs-3">
+          <h3 class="fees quiz">300</h3>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-xs-9">
+          <input type="checkbox" name="TP" value="Technical Presentation" id="TP" class="prog">
+          <label for="TP">Technical Presentation</label>
+        </div>
+        <div class="col-xs-3">
+          <h3 class="fees TP">300</h3>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-xs-9">
+          <input type="checkbox" name="wd" value="Web Designing" id="wd" class="prog">
+          <label for="wd">Web Designing</label>
+        </div>
+        <div class="col-xs-3">
+          <h3 class="fees wd">300</h3>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-xs-9">
+          <input type="checkbox" name="gd" value="Graphic Designing" id="gd" class="prog">
+          <label for="gd">Graphic Designing</label>
+        </div>
+        <div class="col-xs-3">
+          <h3 class="fees gd">300</h3>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-xs-9">
+          <input type="checkbox" name="sp" value="Speed Programming" id="sp" class="prog">
+          <label for="sp">Speed Programing</label>
+        </div>
+        <div class="col-xs-3">
+          <h3 class="fees sp">300</h3>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-xs-9">
+          <input type="checkbox" name="Tk" value="Tiktok" id="Tk" class="prog">
+          <label for="Tk">Tik Tok</label>
+        </div>
+        <div class="col-xs-3">
+          <h3 class="fees Tk">300</h3>
+        </div>
+      </div>
+
+      <div class="row"> 
+        <div class="col-xs-9">
+          <h2 style=" text-align: right; color: white;">Total</h2>
+        </div>
+        <div class="col-xs-3">
+          <input type="hidden" name="total" value="" id="total1">
+          <h3 id="total">0</h3>
+        </div>
+      </div>
+      <button id="submit" type="submit" class="submit">Next</button> 
+    </form>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row footer">
+        <div class="col-sm-6">
+          <h3>FOLLOW US</h3>
+            <div class="footer-icons1">
+                <a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="col-sm-6">
+          <h3>CONTACT US</h3>
+          <div class="footer-icons2">
+              <i class="fa fa-envelope fa-2x" aria-hidden="true"></i> <p>noumanarain0@gmail.com</p><br>
+              <i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i> <p>03133493416</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    var form = document.forms[0];
+    var fees=document.getElementsByClassName("fees");
+    var prog=document.getElementsByClassName("prog");
+    var total=document.getElementById("total");
+    var total1=document.getElementById("total1");
+    var c=0;
+    var t=0;
+
+    function SelectingProgram(e){
+      var p=this.name;
+      if (document.getElementById(p).checked && c==0){
+        t=300;
+        total.innerText=t;
+        total1.value=t;
+        for(var i=0;i<6;i++){
+          fees[i].innerText=200;
+          }
+        document.getElementsByClassName(p)[0].innerText=300;
+        c++;
+      }
+
+      else if (document.getElementById(p).checked == false){
+        if(c==1){
+          t=t-300;
+          total.innerText=t;
+          total1.value=t;
+          for(var i=0;i<6;i++){
+            fees[i].innerText=300;
+          }
+          c=0;
+        }
+        else{
+          if(document.getElementsByClassName(p)[0].innerText==300){
+            document.getElementsByClassName(p)[0].innerText=200;
+            for(var i=0;i<6;i++){
+              if (document.getElementsByClassName("prog")[i].checked == true){
+                fees[i].innerText=300;
+                break;
+              }
+            }
+          }
+          t=t-200;
+          total.innerText=t;
+          total1.value=t;
+          c--;
+        }
+      }
+
+    else{
+      t=t+200
+      total.innerText=t;
+      total1.value=t;
+      c++;
+    }
+  }
+    document.getElementById('quiz').addEventListener("click",SelectingProgram);
+    document.getElementById('sp').addEventListener("click",SelectingProgram);
+    document.getElementById('TP').addEventListener("click",SelectingProgram);
+    document.getElementById('Tk').addEventListener("click",SelectingProgram);
+    document.getElementById('wd').addEventListener("click",SelectingProgram);
+    document.getElementById('gd').addEventListener("click",SelectingProgram);
+
+
+    function clearchecked(){
+      for(var i=0;i<6;i++){
+          fees[i].innerText=300;
+          prog[i].checked=false;
+          }
+    }
+  </script>
+</body>
+</html>

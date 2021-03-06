@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.png" type="image/gif" sizes="16x16">
+
+    <title>C-Cube</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/stylesheets/registration_request.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Load an icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <style>
+        button{
+        width: 100%;
+        border-radius: 40px;
+        font-size: 25px !important;
+        padding: 5px;
+        margin: 10px 0px !important;
+}
+    </style>
+</head>
+<body>
+  <nav>
+    <img class="login__ccube" src="/images/logo_image.png" alt="">
+  </nav>
+  <div class="cube">
+    <h2>C-CUBE</h2>
+    <p>Computing-Competitions-Creativity</p>
+  </div>
+  <div class="container">
+    <h2 class="page-header">Select Program</h2>
+
+    <form action="/admin/registration_details/quiz" method="POST">
+        <button class="submit" type="submit" value="quiz">Quiz</button>
+    </form>
+    
+    <form action="/admin/registration_details/speed_programming" method="POST">
+        <button class="submit" type="submit" value="speed_programming">Speed Programing</button>
+    </form>
+
+    <form action="/admin/registration_details/tik_tok" method="POST">
+        <button class="submit" type="submit" value="tik_tok">Tik Tok</button>
+    </form>
+
+    <form action="/admin/registration_details/graphic_designing" method="POST">
+        <button class="submit" type="submit" value="graphic_designing">Graphic Designing</button>
+    </form>
+
+    <form action="/admin/registration_details/web_designing" method="POST">
+        <button class="submit" type="submit" value="web_designing">Web Designing</button>
+    </form>
+
+    <form action="/admin/registration_details/technical_presentation" method="POST">
+        <button class="submit" type="submit" value="technical_presentation">Technical Presentation</button>
+    </form>
+
+  </div>
+</body>
+</html>
