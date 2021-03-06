@@ -110,12 +110,16 @@ button {
   height: 4rem;
   margin: 5rem 0 2.2rem;
   color: rgba(255, 255, 255, 0.8);
-  background: #ff3366;
+  background: #996e39;
   font-size: 1.5rem;
   border-radius: 3rem;
   cursor: pointer;
   overflow: hidden;
   transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+}
+.login__submit:hover{
+  color: white;
+  background: #735229 !important;
 }
 .login__signup {
   font-size: 1.2rem;

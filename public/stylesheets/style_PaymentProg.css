@@ -119,9 +119,6 @@ Form Styling
   color: black;
   outline: none;
 }
-.form input:focus {
-  outline: none !important;
-}
 .input-styling {
   width: 100%;
   padding: 4px 15px;

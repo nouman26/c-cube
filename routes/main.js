@@ -52,7 +52,6 @@ var rand,mailOptions,host,link;
 var name,roll_no,cnic,department,phone_no,email;
 
 router.post('/',function(req,res){
-    console.log(req.body.email)
     rand=Math.floor((Math.random() * 100) + 54);
     host=req.get('host');
     link="http://"+req.get('host')+"/program?id="+rand;
@@ -129,6 +128,7 @@ router.get('/program',function(req,res){
                 filter_Info_update.exec();
             }
             })
+            rand=null;
             res.render("program",{cnic:cnic,name:name,roll_no: roll_no});
         }
         else
