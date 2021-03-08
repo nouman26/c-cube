@@ -247,7 +247,7 @@ Responsive
 /* =========================================
 Animation Keyframes
 ========================================= */
-@keyframes logo-entry {
+/* @keyframes logo-entry {
   0% {
     opacity: 0;
   }
@@ -327,4 +327,4 @@ Animation Keyframes
   100% {
     border-top: 16px solid #ba823d;
   }
-}
+} */
