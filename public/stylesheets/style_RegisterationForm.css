@@ -257,8 +257,8 @@ Animation Keyframes
   100% {
     opacity: 1;
   }
-}
-@keyframes input-entry {
+} */
+/* @keyframes input-entry {
   0% {
     opacity: 0;
   }
@@ -301,7 +301,7 @@ Animation Keyframes
     border-color: #00fffc;
     box-shadow: 0 0 20px rgba(0, 255, 253, 0.6), inset 0 0 10px rgba(0, 255, 253, 0.4), 0 2px 0 #000;
   }
-}
+}*/
 @keyframes text-glow {
   0% {
     color: #996e39;
@@ -312,7 +312,7 @@ Animation Keyframes
     text-shadow: 0 0 20px #e69745, 0 0 10px #e69745, 0 2px 0 #000;
   }
 }
-@keyframes before-glow {
+/*@keyframes before-glow {
   0% {
     border-bottom: 10px solid #996e39;
   }
